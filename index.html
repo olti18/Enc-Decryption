@@ -1,0 +1,58 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Encryption Tool - Multi Algorithm Support</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Encryption Tool - Multi Algorithm Support</h1>
+
+      <!-- Text Encryption / Decryption -->
+      <div class="section">
+        <h2>Text Encryption / Decryption</h2>
+        <textarea
+          id="textInput"
+          placeholder="Enter text here..."
+          maxlength="500"
+        ></textarea>
+        <input type="password" id="textKey" placeholder="Enter key" />
+        <select id="algorithm">
+          <option value="AES">AES</option>
+          <option value="DES">DES</option>
+          <option value="TripleDES">TripleDES</option>
+        </select>
+        <div class="buttons">
+          <button onclick="encryptText()">Encrypt</button>
+          <button onclick="decryptText()">Decrypt</button>
+        </div>
+        <textarea id="textOutput" placeholder="Output" readonly></textarea>
+      </div>
+
+      <!-- File Encryption / Decryption -->
+      <div class="section">
+        <h2>File Encryption / Decryption</h2>
+        <input type="file" id="fileInput" accept=".txt,.json" />
+        <input type="password" id="fileKey" placeholder="Enter key" />
+        <select id="fileAlgorithm">
+          <option value="AES">AES</option>
+          <option value="DES">DES</option>
+          <option value="TripleDES">TripleDES</option>
+        </select>
+        <div class="buttons">
+          <button onclick="encryptFile()">Encrypt</button>
+          <button onclick="decryptFile()">Decrypt</button>
+        </div>
+        <a id="downloadLink" style="display: none">Download</a>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
